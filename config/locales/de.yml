@@ -1,0 +1,6 @@
+de:
+  classes:
+    ecm/pictures/backend/engine: 'Bilder'
+  routes:
+    mount:
+      ecm_pictures_backend: '/backend/bilder'

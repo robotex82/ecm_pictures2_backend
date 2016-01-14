@@ -1,0 +1,7 @@
+= table.column :name, class: 'truncate-chars truncate-chars-30'
+= table.column :description, class: 'truncate-chars truncate-chars-30'
+= table.column(:link_images, class: 'table-data-centered') do |picture_gallery|
+  - picture_gallery.link_images? ? '<span class="label label-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></span>' : '<span class="label label-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></span>'
+= table.column :pictures_count do |picture_gallery|
+  %span.label.label-default= picture_gallery.pictures_count
+= table.timestamps

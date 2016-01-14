@@ -1,0 +1,4 @@
+
+  localized do
+    mount Ecm::Pictures::Backend::Engine => '/backend/ecm/pictures'
+  end

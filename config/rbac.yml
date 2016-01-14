@@ -1,0 +1,40 @@
+defaults:
+  permissions:
+    - ecm/pictures/backend/engine
+    - ecm/pictures/picture_gallery/index
+    - ecm/pictures/picture_gallery/show
+    - ecm/pictures/picture_gallery/new
+    - ecm/pictures/picture_gallery/create
+    - ecm/pictures/picture_gallery/edit
+    - ecm/pictures/picture_gallery/update
+    - ecm/pictures/picture_gallery/destroy
+    - ecm/pictures/picture/index
+    - ecm/pictures/picture/show
+    - ecm/pictures/picture/new
+    - ecm/pictures/picture/create
+    - ecm/pictures/picture/edit
+    - ecm/pictures/picture/update
+    - ecm/pictures/picture/destroy
+  roles:
+    ecm/pictures/administrator:
+      - ecm/pictures/backend/engine
+      - ecm/pictures/picture_gallery/index
+      - ecm/pictures/picture_gallery/show
+      - ecm/pictures/picture_gallery/new
+      - ecm/pictures/picture_gallery/create
+      - ecm/pictures/picture_gallery/edit
+      - ecm/pictures/picture_gallery/update
+      - ecm/pictures/picture_gallery/destroy
+      - ecm/pictures/picture/index
+      - ecm/pictures/picture/show
+      - ecm/pictures/picture/new
+      - ecm/pictures/picture/create
+      - ecm/pictures/picture/edit
+      - ecm/pictures/picture/update
+      - ecm/pictures/picture/destroy
+    ecm/pictures/reviewer:
+      - ecm/pictures/backend/engine
+      - ecm/pictures/picture_gallery/index
+      - ecm/pictures/picture_gallery/show
+      - ecm/pictures/picture/index
+      - ecm/pictures/picture/show

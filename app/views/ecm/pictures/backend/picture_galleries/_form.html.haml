@@ -1,0 +1,9 @@
+.well
+  = form.input :name
+
+.well  
+  = form.input :markup_language, collection: Ecm::Pictures::markup_languages
+  = form.input :description, input_html: { 'data-add-editor': true, 'data-editor-syntax': :textile }
+
+.well
+  = form.input :link_images
