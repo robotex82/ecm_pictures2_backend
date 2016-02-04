@@ -1,4 +1,4 @@
-class Ecm::Pictures::Backend::PicturesController < Itsf::Backend::BaseController
+class Ecm::Pictures::Backend::PicturesController < Itsf::Backend::Resource::BaseController
   def self.resource_class
     Ecm::Pictures::Picture
   end
