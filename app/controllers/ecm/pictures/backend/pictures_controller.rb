@@ -8,6 +8,6 @@ class Ecm::Pictures::Backend::PicturesController < Itsf::Backend::Resource::Base
   def permitted_params
     params
       .require(:ecm_pictures_picture)
-        .permit(:picture_gallery_id, :name, :markup_language, :description, :image)
+        .permit(:picture_gallery_id, :name, :markup_language, :description, :image, :tag_list)
   end
 end

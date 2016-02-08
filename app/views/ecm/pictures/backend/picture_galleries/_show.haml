@@ -1,0 +1,13 @@
+= table.row :name
+= table.row :description
+= table.row :link_images?
+= table.row :link_images?
+= table.row :pictures_count
+= table.row :position
+= table.row :markup_language
+= table.row :markup_language
+= table.row :created_at
+= table.row :updated_at
+= table.row :tenant, as: :association
+- if table.resource.respond_to?(:tag_list)
+  = table.row :tag_list

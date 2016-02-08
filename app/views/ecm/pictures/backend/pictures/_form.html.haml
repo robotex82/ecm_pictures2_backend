@@ -11,3 +11,7 @@
 .well
   = form.input :image
   = image_tag(form.object.image.url(:default_thumb)) if form.object.image.present?
+
+- if form.object.respond_to?(:tag_list)
+  .well
+    = form.input :tag_list, input_html: { value: form.object.tag_list.to_s }
