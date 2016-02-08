@@ -7,3 +7,6 @@
 
 .well
   = form.input :link_images
+
+.well
+  = form.input :picture_images, as: :file, input_html: { multiple: 'multiple' }
