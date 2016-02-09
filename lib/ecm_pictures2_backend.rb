@@ -6,5 +6,5 @@ require 'jpeg_camera'
 require 'rails-i18n'
 require 'route_translator'
 
-require "ecm/pictures/backend"
-require "ecm/pictures/backend/engine"
+require 'ecm/pictures/backend'
+require 'ecm/pictures/backend/engine'
