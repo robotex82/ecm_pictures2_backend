@@ -16,6 +16,8 @@ module Ecm
         mattr_accessor :registered_services do
           -> {[]}
         end
+
+        mattr_accessor(:enable_html5_camera_support) { true }
       end
     end
   end

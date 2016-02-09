@@ -1,0 +1,16 @@
+!div.selected > .thumbnail {
+  display: relative;
+}
+
+.glyphicon.overlay {
+  position: absolute;
+  top: 15px;
+  left: 30px;
+  font-size: 20px;
+   color: green;
+   display: none;
+}
+
+div.selected > .glyphicon.overlay {
+  display: inline-block;
+}

@@ -16,4 +16,11 @@ Ecm::Pictures::Backend.configure do |config|
   # Default: config.registered_services = -> {[]}
   # 
   config.registered_services = -> {[]}
+
+  # Enables HTML 5 camera support for taking pictures inside the
+  # picture new action.
+  # 
+  # Default: config.enable_html5_camera_support = false
+  # 
+  config.enable_html5_camera_support = false
 end
