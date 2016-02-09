@@ -1,8 +1,8 @@
-!div.selected > .thumbnail {
+#snapshots div.selected {
   display: relative;
 }
 
-.glyphicon.overlay {
+#snapshots .glyphicon.overlay {
   position: absolute;
   top: 15px;
   left: 30px;
@@ -11,6 +11,6 @@
    display: none;
 }
 
-div.selected > .glyphicon.overlay {
+#snapshots div.selected > .glyphicon.overlay {
   display: inline-block;
 }
