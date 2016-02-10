@@ -26,7 +26,7 @@ class Ecm::Pictures::Backend::PicturesController < Itsf::Backend::Resource::Base
     image_base64 = processed_params[:ecm_pictures_picture].try(:delete, :image_base64)
     if image_base64.present?
       image = extract_image_base64(image_base64) 
-      processed_params.merge!(image: image)
+      processed_params[:ecm_pictures_picture].merge!(image: image)
     end
     processed_params.require(:ecm_pictures_picture)
                       .permit(:picture_gallery_id, :name, :markup_language, :description, :image, :tag_list)
