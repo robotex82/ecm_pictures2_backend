@@ -1,39 +1,50 @@
-remove_overlays = (elements) ->
-  $(elements).removeClass('selected')
-
-add_overlay = (element) ->
-   element.parent().toggleClass('selected')
-
-take_snapshot = ->
+take_snapshot = (attribute_name) ->
   Webcam.snap (data_uri) ->
-    $('#snapshots').append('<div class="col-xs-12 col-sm-6 col-md-4 col-lg-2"><img class="img-responsive thumbnail" data-onclick-copy-data-to="#ecm_pictures_picture_image_base64" src="'+data_uri+'"/><span class="glyphicon glyphicon-ok overlay" /></div>')
+    console.log attribute_name
+    snapshot_container = $("[name='snapshots-for-#{attribute_name}']").first()
+    img_name = "webcam-snapshot-for-#{attribute_name}"
+    img_taken_at = Date.now()
+    snapshot_container.append('<div class="col-xs-12 col-sm-6 col-md-4 col-lg-2"><img data-taken-at="'+img_taken_at+'" data-attribute-name="'+attribute_name+'" name="'+img_name+'" class="img-responsive thumbnail webcam-snapshot" src="'+data_uri+'"/><span class="glyphicon glyphicon-ok overlay" style="display: none;" /></div>')
 
 $ ->
-  $('[data-camera-toggle=true]').each (index) ->
+  $('[data-webcam-toggle=true]').each (index) ->
     button = $(@)
     button.on 'click', ->
-      camera_container = $(@).data('camera-target')
-      $(camera_container).css('width', '640px')
-      $(camera_container).css('height', '480px')
-      Webcam.attach(camera_container)
+      camera_container_name = $(@).data('attribute-name')
+      camera_container = $("[name='webcam-for-#{camera_container_name}']").first()
+      console.log camera_container
+      camera_container.css('width', '640px')
+      camera_container.css('height', '480px')
+      Webcam.attach(camera_container.attr('id'))
       false
 
 $ ->
-  $('[data-capture-picture=true]').each (index) ->
+  $('[data-webcam-trigger=true]').each (index) ->
     button = $(@)
     button.on 'click', ->
-      take_snapshot()
+      attribute_name = $(@).data('attribute-name')
+      take_snapshot(attribute_name)
       false
 
 $ ->
-  $('#snapshots').on 'click', '[data-onclick-copy-data-to]', (e) ->
-    source = $(@)
-    source.on 'click', ->
-      target_id = $(@).attr('data-onclick-copy-data-to')
-      target = $(target_id)
-      # raw_image_data = source.attr('src').replace(/^data\:image\/\w+\;base64\,/, '')
-      raw_image_data = source.attr('src')
-      target.val(raw_image_data)
-      remove_overlays($(@).parent().parent().find('.selected'))
-      add_overlay($(@))
-      e.preventDefault
+  $('.webcam-snapshots').on 'click', 'img.webcam-snapshot', (e) ->
+    multiple = $(@).parent().data('multiple')
+    multiple = true
+    console.log multiple
+    attribute_name = $(@).data('attribute-name')
+    taken_at = $(@).data('taken-at')
+    raw_image_data = $(@).attr('src')
+    hidden_tag = '<input type="hidden" name="'+attribute_name+'[]" data-taken-at="'+taken_at+'" class="webcam optional" value="'+raw_image_data+'">'
+    console.log $("input[name='#{attribute_name}[]']")
+    if multiple && (existent = $("input[name='#{attribute_name}[]']")).length
+      console.log('Removing already existent tags')
+      existent.remove()
+      $(@).parent().parent().find('span').hide()
+    if (existent = $("input[name='#{attribute_name}[]'][data-taken-at='#{taken_at}']")).length
+      console.log('Removing already existent tag')
+      existent.remove()
+      $(@).parent().find('span').hide()
+    else
+      console.log('Adding hidden tag')
+      $(@).after(hidden_tag)
+      $(@).parent().find('span').show()

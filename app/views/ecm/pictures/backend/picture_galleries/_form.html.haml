@@ -11,6 +11,10 @@
 .well
   = form.input :picture_images, as: :file, input_html: { multiple: 'multiple' }
 
+- if Ecm::Pictures::Backend::Configuration.enable_html5_camera_support
+  .well
+    = form.input :picture_images, as: :webcam, multiple: true
+
 - if form.object.respond_to?(:tag_list)
   .well
     = form.input :tag_list, input_html: { value: form.object.tag_list.to_s }

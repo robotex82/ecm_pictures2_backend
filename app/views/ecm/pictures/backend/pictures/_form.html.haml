@@ -13,13 +13,8 @@
   = image_tag(form.object.image.url(:default_thumb)) if form.object.image.present?
 
 - if Ecm::Pictures::Backend::Configuration.enable_html5_camera_support
-  %input{ name: 'ecm_pictures_picture[image_base64]', type: 'hidden', id: 'ecm_pictures_picture_image_base64', value: '' }
   .well
-    .bottom-margin-1
-      = link_to(t('.enable_camera'), '#', class: 'btn btn-primary', data: { 'camera-toggle': true, 'camera-target': '#camera' })
-      = link_to(t('.capture_picture'), '#', class: 'btn btn-primary', data: { 'capture-picture': true, 'camera-target': '#camera' })
-    #camera.bottom-margin-1
-    #snapshots.row
+    = form.input :picture_images, as: :webcam
 
 - if form.object.respond_to?(:tag_list)
   .well

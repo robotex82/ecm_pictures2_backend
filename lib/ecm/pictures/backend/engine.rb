@@ -8,6 +8,8 @@ module Ecm
           app.config.assets.precompile << 'ecm_pictures_backend.js'
           app.config.assets.precompile << 'ecm_pictures_backend.css'
         end
+
+        config.autoload_paths << root.join(*%w(app inputs))
       end
     end
   end

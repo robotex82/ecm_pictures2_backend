@@ -1,0 +1,7 @@
+.webcam-controls.bottom-margin-1
+  = link_to(t('.enable_camera'), '#', class: 'btn btn-primary', data: { 'webcam-toggle': true, 'attribute-name': "#{f.object.class.name.underscore.gsub('/', '_')}[#{attribute_name}_base_64]" })
+  = link_to(t('.capture_picture'), '#', class: 'btn btn-primary', data: { 'webcam-trigger': true, 'attribute-name': "#{f.object.class.name.underscore.gsub('/', '_')}[#{attribute_name}_base_64]" })
+
+.webcam.bottom-margin-1{ id: "webcam-for-#{f.object.class.name.underscore.gsub('/', '_')}_#{attribute_name}_base_64", name: "webcam-for-#{f.object.class.name.underscore.gsub('/', '_')}[#{attribute_name}_base_64]" }
+
+.webcam-snapshots.row{ 'data-multiple': false, id: "snapshots-for-#{f.object.class.name.underscore.gsub('/', '_')}_#{attribute_name}_base_64", name: "snapshots-for-#{f.object.class.name.underscore.gsub('/', '_')}[#{attribute_name}_base_64]" }
