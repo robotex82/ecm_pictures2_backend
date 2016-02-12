@@ -1,16 +1,18 @@
-#snapshots div.selected {
-  display: relative;
-}
-
-#snapshots .glyphicon.overlay {
-  position: absolute;
+.thumbnail-with-overlay .glyphicon.overlay {
   top: 15px;
   left: 30px;
   font-size: 20px;
-   color: green;
-   display: none;
+  color: light-green;
 }
 
 #snapshots div.selected > .glyphicon.overlay {
   display: inline-block;
+}
+
+.thumbnail-with-overlay {
+  display: relative;
+}
+
+.thumbnail-with-overlay  .overlay {
+  position: absolute;
 }

@@ -4,7 +4,7 @@ take_snapshot = (attribute_name) ->
     snapshot_container = $("[name='snapshots-for-#{attribute_name}']").first()
     img_name = "webcam-snapshot-for-#{attribute_name}"
     img_taken_at = Date.now()
-    snapshot_container.append('<div class="col-xs-12 col-sm-6 col-md-4 col-lg-2"><img data-taken-at="'+img_taken_at+'" data-attribute-name="'+attribute_name+'" name="'+img_name+'" class="img-responsive thumbnail webcam-snapshot" src="'+data_uri+'"/><span class="glyphicon glyphicon-ok overlay" style="display: none;" /></div>')
+    snapshot_container.append('<div class="col-xs-12 col-sm-6 col-md-4 col-lg-2 thumbnail-with-overlay"><img data-taken-at="'+img_taken_at+'" data-attribute-name="'+attribute_name+'" name="'+img_name+'" class="img-responsive thumbnail webcam-snapshot" src="'+data_uri+'"/><span class="text-success glyphicon glyphicon-ok-circle overlay" style="display: none;" /></div>')
 
 $ ->
   $('[data-webcam-toggle=true]').each (index) ->
@@ -29,7 +29,6 @@ $ ->
 $ ->
   $('.webcam-snapshots').on 'click', 'img.webcam-snapshot', (e) ->
     multiple = $(@).parent().data('multiple')
-    multiple = true
     console.log multiple
     attribute_name = $(@).data('attribute-name')
     taken_at = $(@).data('taken-at')
