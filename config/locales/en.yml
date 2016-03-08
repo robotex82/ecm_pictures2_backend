@@ -1,0 +1,13 @@
+en:
+  classes:
+    ecm/pictures/backend/engine: 'Pictures'
+  inputs:
+    webcam:
+      capture_picture: Capture picture
+      enable_camera: Enable camera
+    webcam_multiple:
+      capture_picture: Capture picture
+      enable_camera: Enable camera
+  routes:
+    mount:
+      ecm_pictures_backend: '/backend/pictures'

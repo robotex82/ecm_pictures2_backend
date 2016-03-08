@@ -1,6 +1,13 @@
 de:
   classes:
     ecm/pictures/backend/engine: 'Bilder'
+  inputs:
+    webcam:
+      capture_picture: Auslösen
+      enable_camera: Kamera aktivieren
+    webcam_multiple:
+      capture_picture: Auslösen
+      enable_camera: Kamera aktivieren
   routes:
     mount:
       ecm_pictures_backend: '/backend/bilder'
