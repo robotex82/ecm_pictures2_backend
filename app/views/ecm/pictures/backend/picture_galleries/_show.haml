@@ -5,7 +5,8 @@
 = table.row :position
 = table.row :markup_language
 = table.row :markup_language
-= table.row :created_at
-= table.row :updated_at
 = table.row(:tenant, as: :association) if table.resource.respond_to?(:tenant)
 = table.row(:tag_list) if table.resource.respond_to?(:tag_list)
+= table.row :display_code_for_erb
+= table.row :created_at
+= table.row :updated_at
