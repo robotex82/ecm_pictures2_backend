@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'rails', '>= 4.0'
 
-  s.add_dependency 'ecm_news2'
+  s.add_dependency 'ecm_pictures2'
   s.add_dependency 'itsf_backend'
   s.add_dependency 'jpeg_camera'
   s.add_dependency 'rails-i18n'

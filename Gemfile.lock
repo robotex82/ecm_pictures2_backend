@@ -1,9 +1,9 @@
 PATH
   remote: .
   specs:
-    ecm_pictures2_backend (2.0.7)
+    ecm_pictures2_backend (2.0.8)
       coffee-rails
-      ecm_news2
+      ecm_pictures2
       itsf_backend
       jpeg_camera
       jquery-rails
@@ -58,8 +58,6 @@ GEM
       activerecord (>= 3.0.20)
       activesupport (>= 3.0.20)
       rdiscount
-    acts_as_published (1.0.1)
-      rails (>= 3.2.0, < 5.0.0)
     arel (6.0.3)
     bootstrap-kaminari-views (0.0.5)
       kaminari (>= 0.13)
@@ -80,14 +78,6 @@ GEM
     coffee-script-source (1.10.0)
     commonjs (0.2.7)
     concurrent-ruby (1.0.0)
-    ecm_news2 (2.0.8)
-      acts_as_markup
-      acts_as_published
-      bootstrap-kaminari-views
-      ecm_pictures2
-      friendly_id (>= 5.0)
-      kaminari
-      rails (>= 4.0)
     ecm_pictures2 (2.1.3)
       RedCloth
       acts_as_list
