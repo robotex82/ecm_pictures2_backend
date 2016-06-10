@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Ecm::Pictures::Backend::VERSION
   s.authors     = ['Roberto Vasquez Angel']
   s.email       = ['roberto@vasquez-angel.de']
-  s.homepage    = 'https://github.com/robotex82/ecm_news2_backend'
+  s.homepage    = 'https://github.com/robotex82/ecm_pictures2_backend'
   s.summary     = 'Backend Module for ECM Pictures 2'
   s.description = 'Provides a ITSF Backend based Backend for ECM Pictures 2'
   s.license     = 'MIT'
