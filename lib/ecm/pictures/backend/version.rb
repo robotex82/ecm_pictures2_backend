@@ -1,7 +1,7 @@
 module Ecm
   module Pictures
     module Backend
-      VERSION = '2.0.7'.freeze
+      VERSION = '2.0.8'.freeze
     end
   end
 end
