@@ -1,5 +1,5 @@
 Ecm::Pictures::Backend::Engine.routes.draw do
-  resources :picture_galleries
+  resources :galleries
   resources :pictures
 
   root to: 'home#index'
