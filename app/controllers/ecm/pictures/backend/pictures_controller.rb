@@ -1,4 +1,21 @@
 class Ecm::Pictures::Backend::PicturesController < Itsf::Backend::Resource::BaseController
+  module ColumnsHashFix
+    extend ActiveSupport::Concern
+    
+    included do
+      before_action :fix_columns_hash, only: [:update]
+    end
+
+    private
+
+    def fix_columns_hash
+      # @todo Find out what is causing the loss of columns in columns_hash
+      resource_class.reset_column_information
+    end
+  end
+
+  include ColumnsHashFix
+
   def self.resource_class
     Ecm::Pictures::Picture
   end
@@ -20,7 +37,7 @@ class Ecm::Pictures::Backend::PicturesController < Itsf::Backend::Resource::Base
   def permitted_params
     processed_params = params.deep_dup
     image_base64 = processed_params[:picture].try(:delete, :image_base64)
-    
+
     p = processed_params.require(:picture).permit(:gallery_id, :name, :markup_language, :description, :tag_list, :image)
 
     if image_base64.present?
