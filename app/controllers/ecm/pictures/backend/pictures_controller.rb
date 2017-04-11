@@ -19,9 +19,9 @@ class Ecm::Pictures::Backend::PicturesController < Itsf::Backend::Resource::Base
 
   def permitted_params
     processed_params = params.deep_dup
-    image_base64 = processed_params[:ecm_pictures_picture].try(:delete, :image_base64)
+    image_base64 = processed_params[:picture].try(:delete, :image_base64)
     
-    p = processed_params.require(:ecm_pictures_picture).permit(:gallery_id, :name, :markup_language, :description, :tag_list, :image)
+    p = processed_params.require(:picture).permit(:gallery_id, :name, :markup_language, :description, :tag_list, :image)
 
     if image_base64.present?
       p.merge(image: extract_image_base64(image_base64) ) 

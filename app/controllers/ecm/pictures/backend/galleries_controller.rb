@@ -7,7 +7,7 @@ class Ecm::Pictures::Backend::GalleriesController < Itsf::Backend::Resource::Bas
 
   def permitted_params
     params
-      .require(:ecm_pictures_gallery)
+      .require(:gallery)
       .permit(:name, :markup_language, :description, :link_images, :tag_list, picture_images: [])
   end
 end
