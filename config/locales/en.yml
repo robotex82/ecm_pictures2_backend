@@ -1,0 +1,5 @@
+en:
+  classes:
+    ecm/pictures/backend/engine: 'Pictures'
+  routes:
+    ecm-pictures-backend-engine: 'pictures'
