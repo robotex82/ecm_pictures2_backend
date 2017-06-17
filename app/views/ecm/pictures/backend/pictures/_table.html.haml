@@ -1,7 +1,7 @@
-= table.association :gallery, sortable: true
+= table.association :gallery, sortable: :gallery_name
 = table.column(:preview_picture) do |picture|
   %img.img-responsive.bottom-margin-2{ src: picture.image.url(:default_thumb) }
-= table.column :name, class: 'truncate-chars truncate-chars-30', sortable: true
-= table.column :description, class: 'truncate-chars truncate-chars-30', sortable: true
+= table.column :name, sortable: true, class: 'truncate-chars truncate-chars-30'
+= table.column :description, sortable: true, class: 'truncate-chars truncate-chars-30'
 = table.column(:image_file_size, sortable: true) { |picture| number_to_human_size(picture.image_file_size) }
 = table.timestamps

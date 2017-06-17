@@ -1,6 +1,6 @@
-= table.column :name, class: 'truncate-chars truncate-chars-30', sortable: true
-= table.column :description, class: 'truncate-chars truncate-chars-30', sortable: true
+= table.column :name, sortable: true, class: 'truncate-chars truncate-chars-30'
+= table.column :description, sortable: true, class: 'truncate-chars truncate-chars-30'
 = table.column :link_images, sortable: true
-= table.column :pictures_count do |gallery|
+= table.column :pictures_count, sortable: true do |gallery|
   %span.label.label-default= gallery.pictures_count
 = table.timestamps
