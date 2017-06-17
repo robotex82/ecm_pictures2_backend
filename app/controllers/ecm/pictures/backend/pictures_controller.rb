@@ -22,6 +22,10 @@ class Ecm::Pictures::Backend::PicturesController < Itsf::Backend::Resource::Base
 
   private
 
+  def collection_scope
+    super.includes(:gallery)
+  end
+
   def extract_image_base64(encoded_image)
     decoded_image = Base64.decode64(encoded_image.gsub(/^data\:image\/\w+\;base64\,/, '')).force_encoding('UTF-8')
     content_type = encoded_image.split(';').first.split(':').last
