@@ -1,4 +1,4 @@
-= table.association :gallery, sortable: :gallery_name
+= table.association :gallery # , sortable: :gallery_name
 = table.column(:preview_picture) do |picture|
   %img.img-responsive.bottom-margin-2{ src: picture.image.url(:default_thumb) }
 = table.column :name, sortable: true, class: 'truncate-chars truncate-chars-30'
