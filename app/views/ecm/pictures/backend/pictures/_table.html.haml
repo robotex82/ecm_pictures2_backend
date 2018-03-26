@@ -1,7 +1,12 @@
-= table.association :gallery # , sortable: :gallery_name
+= table.acts_as_list_actions
+= table.association :gallery, sort: { column_name: 'ecm_pictures_galleries.name' }
 = table.column(:preview_picture) do |picture|
-  %img.img-responsive.bottom-margin-2{ src: picture.image.url(:default_thumb) }
-= table.column :name, sortable: true, class: 'truncate-chars truncate-chars-30'
-= table.column :description, sortable: true, class: 'truncate-chars truncate-chars-30'
-= table.column(:image_file_size, sortable: true) { |picture| number_to_human_size(picture.image_file_size) }
-= table.timestamps
+  - capture_haml do
+    %img.img-responsive.bottom-margin-2{ src: picture.image.url(:default_thumb) }
+= table.column :name, sort: true, class: 'truncate-chars truncate-chars-30'
+= table.column :description, sort: true, class: 'truncate-chars truncate-chars-30'
+= table.column(:image_file_size, sort: true) do |picture|
+  - capture_haml do
+    = number_to_human_size(picture.image_file_size)
+= table.timestamps(sort: true)
+= table.acts_as_published_actions

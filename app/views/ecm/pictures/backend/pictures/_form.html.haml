@@ -9,6 +9,9 @@
   = form.input :description, input_html: { 'data-add-editor': Itsf::Backend.features?(:'ace-rails-ap'), 'data-editor-syntax': :textile }
 
 .well
+  = form.input :published, as: :boolean
+
+.well
   = form.input :image
   = image_tag(form.object.image.url(:default_thumb)) if form.object.image.present?
 
